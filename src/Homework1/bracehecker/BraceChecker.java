@@ -30,7 +30,7 @@ public class BraceChecker {
 
         }
         int stacksize = stack.getSize();
-        for (int i = 0; i <stacksize ; i++) {
+        for (int i = 0; i <=stacksize ; i++) {
             System.err.println("opened"+(char)stack.pop()+"not closed");
 
         }
