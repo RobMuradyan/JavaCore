@@ -96,6 +96,7 @@ public class FigurePainter {
             count4--;
             count2++;
         }
+
     }
 }
 
