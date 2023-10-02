@@ -33,7 +33,7 @@ public class EmployeeDemo {
                     String Position = scanner.nextLine();
                     Employee employee = new Employee(Name,Surname,Employeesid,Salary,Company,Position);
                     employeeStorage.add(employee);
-                    System.out.println("employee creatid");
+                    System.out.println("employee created");
                     break;
                 case "2":
                     employeeStorage.print();
