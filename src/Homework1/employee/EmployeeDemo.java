@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 public class EmployeeDemo {
     public static void main(String[] args) {
+
         Scanner scanner = new Scanner(System.in);
         EmployeeStorage employeeStorage = new EmployeeStorage();
         boolean isrun = true;
@@ -39,14 +40,14 @@ public class EmployeeDemo {
                     employeeStorage.print();
                     break;
                 case "3":
-                    System.out.println("please input keyword");
-                    String keyword = scanner.nextLine();
-                    employeeStorage.search(keyword);
+                    System.out.println("please input id");
+                    String id = scanner.nextLine();
+                    employeeStorage.searchid(id);
                     break;
                 case "4":
-                    System.out.println("please input keyword");
-                    keyword= scanner.nextLine();
-                    employeeStorage.search(keyword);
+                    System.out.println("please input company");
+                    String company= scanner.nextLine();
+                    employeeStorage.searchcompany(company);
 
                     break;
                 default:

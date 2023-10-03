@@ -25,14 +25,24 @@ employees[size++]=employee;
 
         }
     }
-    public void search(String keyword){
+    public void searchid(String id){
         for (int i = 0; i <size ; i++) {
-            if (employees[i].getEmployeeid().contains(keyword)||employees[i].getCompany().contains(keyword)){
+            if (employees[i].getEmployeeid().contains(id)){
                 System.out.println(employees[i].getName()+" "+employees[i].getSourname()+" "
                         +employees[i].getEmployeeid()+" "+employees[i].getSalary()+" "
                         +employees[i].getCompany()+" "+employees[i].getPosition());
             }
 
+        }
+    }
+    public  void  searchcompany(String company){
+        for (int i = 0; i <size ; i++) {
+            if (employees[i].getCompany().contains(company)){
+                System.out.println(employees[i].getName()+" "+employees[i].getSourname()+" "
+                        +employees[i].getEmployeeid()+" "+employees[i].getSalary()+" "
+                        +employees[i].getCompany()+" "+employees[i].getPosition());
+
+            }
         }
     }
 
