@@ -14,6 +14,8 @@ public class EmployeeDemo {
             System.out.println("please input 2 for print all employee");
             System.out.println("please input 3 for search employee by employee id");
             System.out.println("please input 4 for search employe by company name");
+            System.out.println("please input 5 for removing");
+            System.out.println("please input 6 for change employee");
             String command = scanner.nextLine();
             switch (command){
                 case "0":
@@ -50,6 +52,18 @@ public class EmployeeDemo {
                     employeeStorage.searchcompany(company);
 
                     break;
+                case "5":
+                    System.out.println("please input id for remove");
+                    String ID =scanner.nextLine();
+                    employeeStorage.DeleteByID(ID);
+
+                    break;
+                case "6":
+                    System.out.println("please input id for change");
+                    String Changeemployeeid=scanner.nextLine();
+                    employeeStorage.ChangeemployeeByid(Changeemployeeid);
+                    System.out.println("employee is updated");
+break;
                 default:
                     System.out.println("unknown command try again");
 
