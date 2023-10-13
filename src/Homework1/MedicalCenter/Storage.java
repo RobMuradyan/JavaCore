@@ -1,9 +1,8 @@
 package Homework1.MedicalCenter;
 
-
 import java.util.Scanner;
 
-public class DoctorStorage {
+public class Storage {
     private Doctor[] doctors = new Doctor[10];
     Scanner scanner=new Scanner(System.in);
     private int size;
@@ -65,4 +64,39 @@ public class DoctorStorage {
 
         }
 
-}}
+    }
+    private Patient[] patients = new Patient[10];
+    private int siz;
+
+    public  void addp(Patient patient){
+        if (siz== patients.length){
+            extendp();
+        }
+        patients[siz++]=patient;
+    }
+
+    private void extendp() {
+        Patient[] tmp = new Patient[patients.length+10];
+        System.arraycopy(patients,0,tmp,0,patients.length);
+        patients = tmp;
+    }
+    public  void printbydoctor(String doctor){
+        for (int i = 0; i <size ; i++) {
+            if (patients[i].getDoctor().contains(doctor)){
+                System.out.println(patients[i].getId()+" "+patients[i].getName()+" "+patients[i].getSourname()+" "+
+                        patients[i].getPhone()+" "+patients[i].getDoctor()+" "+patients[i].getRegisterdatetime());
+            }
+
+        }
+    }
+    public  void print(){
+        for (int i = 0; i <size ; i++) {
+            System.out.println(patients[i].getId()+" "+patients[i].getName()+" "+patients[i].getSourname()+" "+
+                    patients[i].getPhone()+" "+patients[i].getDoctor()+" "+patients[i].getRegisterdatetime());
+
+        }
+
+    }
+}
+
+
