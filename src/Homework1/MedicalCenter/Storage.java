@@ -5,13 +5,13 @@ import java.util.Scanner;
 public class Storage {
     private Doctor[] doctors = new Doctor[10];
     Scanner scanner=new Scanner(System.in);
-    private int size;
+    private int doctorsize;
 
     public  void add(Doctor doctor){
-        if (size== doctors.length){
+        if (doctorsize== doctors.length){
             extend();
         }
-        doctors[size++]=doctor;
+        doctors[doctorsize++]=doctor;
     }
 
     private void extend() {
@@ -20,7 +20,7 @@ public class Storage {
         doctors = tmp;
     }
     public void searchprofession(String profession){
-        for (int i = 0; i <size ; i++) {
+        for (int i = 0; i <doctorsize ; i++) {
             if (doctors[i].getProfession().contains(profession)) {
                 System.out.println(doctors[i].getId()+" "+doctors[i].getName()+" "+
                         doctors[i].getSourname()+" "+doctors[i].getEmail()+" "+doctors[i].getPhoneNumber()+" "+doctors[i].getProfession());
@@ -29,19 +29,19 @@ public class Storage {
         }
     }
     public void DeleteByID(String id){
-        for (int i = 0; i <size ; i++) {
+        for (int i = 0; i <doctorsize ; i++) {
             if (doctors[i].getId().equals(id)){
-                for (int j = 0; j <size ; j++) {
+                for (int j = 0; j <doctorsize ; j++) {
                     doctors[j]=doctors[j+1];
 
 
-                }size--;
+                }doctorsize--;
                 break;
             }
 
         }}
     public void ChangedoctorByid(String id){
-        for (int i = 0; i <size ; i++) {
+        for (int i = 0; i <doctorsize ; i++) {
             if (doctors[i].getId().equals(id)){
                 System.out.println("please input your new name");
                 String name=scanner.nextLine();
@@ -66,13 +66,13 @@ public class Storage {
 
     }
     private Patient[] patients = new Patient[10];
-    private int siz;
+    private int patientsize;
 
     public  void addp(Patient patient){
-        if (siz== patients.length){
+        if (patientsize== patients.length){
             extendp();
         }
-        patients[siz++]=patient;
+        patients[patientsize++]=patient;
     }
 
     private void extendp() {
@@ -81,7 +81,7 @@ public class Storage {
         patients = tmp;
     }
     public  void printbydoctor(String doctor){
-        for (int i = 0; i <size ; i++) {
+        for (int i = 0; i <patientsize ; i++) {
             if (patients[i].getDoctor().contains(doctor)){
                 System.out.println(patients[i].getId()+" "+patients[i].getName()+" "+patients[i].getSourname()+" "+
                         patients[i].getPhone()+" "+patients[i].getDoctor()+" "+patients[i].getRegisterdatetime());
@@ -90,7 +90,7 @@ public class Storage {
         }
     }
     public  void print(){
-        for (int i = 0; i <size ; i++) {
+        for (int i = 0; i <patientsize ; i++) {
             System.out.println(patients[i].getId()+" "+patients[i].getName()+" "+patients[i].getSourname()+" "+
                     patients[i].getPhone()+" "+patients[i].getDoctor()+" "+patients[i].getRegisterdatetime());
 
